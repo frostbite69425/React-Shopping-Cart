@@ -1,15 +1,21 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, beforeEach } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import Navbar from "../components/Navbar";
 import { createMemoryRouter, MemoryRouter, RouterProvider } from "react-router";
 import routes from "../routes";
 
+let cartItems;
+
 describe("Navbar component", () => {
+  beforeEach(() => {
+    cartItems = [];
+  });
+
   it("renders the navbar correctly", () => {
     render(
       <MemoryRouter>
-        <Navbar />
+        <Navbar cartItems={cartItems} />
       </MemoryRouter>,
     );
     expect(screen.getByRole("navigation")).toBeInTheDocument();
@@ -18,7 +24,7 @@ describe("Navbar component", () => {
   it("does not render the excluded path", () => {
     render(
       <MemoryRouter>
-        <Navbar excludedPath={"/"} />
+        <Navbar excludedPath={"/"} cartItems={cartItems} />
       </MemoryRouter>,
     );
     expect(screen.queryByText("home")).toBeNull();
@@ -27,7 +33,7 @@ describe("Navbar component", () => {
   it("renders the other two paths when an excluded path is provided", () => {
     render(
       <MemoryRouter>
-        <Navbar excludedPath={"shop"} />
+        <Navbar cartItems={cartItems} excludedPath={"shop"} />
       </MemoryRouter>,
     );
     expect(screen.getAllByRole("link").length).toBe(2);
@@ -40,9 +46,9 @@ describe("Navbar component", () => {
 
     const user = userEvent.setup();
 
-    const shopLink = screen.getByRole("link", { name: "shop" });
-    let homeLink = screen.queryByRole("link", { name: "home" });
-    const cartLink = screen.getByRole("link", { name: "cart" });
+    const shopLink = screen.getByRole("link", { name: "Shop" });
+    let homeLink = screen.queryByRole("link", { name: "Home" });
+    const cartLink = screen.getByRole("link", { name: "Cart" });
 
     expect(shopLink).toBeInTheDocument();
     expect(homeLink).not.toBeInTheDocument();
@@ -50,7 +56,7 @@ describe("Navbar component", () => {
 
     await user.click(shopLink);
 
-    homeLink = screen.getByRole("link", { name: "home" });
+    homeLink = screen.getByRole("link", { name: "Home" });
 
     expect(shopLink).not.toBeInTheDocument();
     expect(homeLink).toBeInTheDocument();

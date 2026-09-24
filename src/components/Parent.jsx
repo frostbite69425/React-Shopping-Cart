@@ -7,7 +7,7 @@ const Parent = () => {
 
   return (
     <>
-      <Navbar excludedPath={"/"} />
+      <Navbar excludedPath={"/"} cartItems={cartItems} />
       <Outlet context={[cartItems, setCartItems]} />
     </>
   );

@@ -13,7 +13,8 @@ const Cart = () => {
           return (
             <Card
               key={cartItem.id}
-              item={cartItem.id}
+              item={cartItem}
+              cartItems={cartItems}
               parent="cart"
               setCartItems={setCartItems}
             />
@@ -21,8 +22,8 @@ const Cart = () => {
         })
       ) : (
         <p>
-          "You currently have no items in your cart. Please add them in the shop
-          to view them here."
+          You currently have no items in your cart. Please add them in the shop
+          to view them here.
         </p>
       )}
     </>
