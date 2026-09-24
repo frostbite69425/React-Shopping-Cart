@@ -1,13 +1,17 @@
 import Home from "./components/Home";
+import Cart from "./components/Cart";
+import Parent from "./components/Parent";
+import Shop from "./components/Shop";
 
 const routes = [
   {
     path: "/",
-    element: <Home />,
+    element: <Parent />,
     errorElement: null,
     children: [
-      { path: "shop", element: null },
-      { path: "cart", element: null },
+      { index: true, element: <Home /> },
+      { path: "shop", element: <Shop /> },
+      { path: "cart", element: <Cart /> },
     ],
   },
 ];
