@@ -1,9 +1,8 @@
-import Navbar from "./Navbar";
-
 const Home = () => {
   return (
     <>
-      <Navbar excludedPath={"/"} />
+      <h1>Home</h1>
+      <h2>Check out our store!</h2>
     </>
   );
 };
