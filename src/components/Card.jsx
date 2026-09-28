@@ -59,6 +59,7 @@ const Card = ({ item, cartItems, setCartItems, parent = "shop" }) => {
           <button
             type="button"
             onClick={(e) => handleIncrementDecrement(e, "-")}
+            disabled={itemQuantity === 0}
           >
             -
           </button>
@@ -75,7 +76,7 @@ const Card = ({ item, cartItems, setCartItems, parent = "shop" }) => {
           </button>
         </div>
         <button type="button" onClick={handleCartClick}>
-          Add to Cart.
+          Add to Cart
         </button>
       </div>
     );

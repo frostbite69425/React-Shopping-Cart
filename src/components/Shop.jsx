@@ -1,24 +1,13 @@
-import { useEffect, useState } from "react";
 import { useOutletContext } from "react-router";
 import Card from "./Card";
+import useImageUrl from "../hooks/useImageUrl";
 
 const Shop = () => {
-  const [shopItems, setShopItems] = useState([]);
+  const { shopItems, error, loading } = useImageUrl();
   const [cartItems, setCartItems] = useOutletContext([]);
 
-  useEffect(() => {
-    let ignore = false;
-
-    if (!ignore) {
-      fetch("https://fakestoreapi.com/products")
-        .then((response) => response.json())
-        .then((data) => data.map((item) => ({ ...item, quantity: 0 })))
-        .then((data) => setShopItems(data))
-        .catch((error) => console.error(error));
-    }
-
-    return () => (ignore = true);
-  }, []);
+  if (loading) return <p>Loading ...</p>;
+  if (error) return <p>A network error was encountered</p>;
 
   return (
     <>
