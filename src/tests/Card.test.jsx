@@ -29,7 +29,7 @@ let cartItems = [
   },
 ];
 
-let setCartItems = vi.fn();
+const setCartItems = vi.fn();
 
 const mockFetch = vi.fn();
 
@@ -120,7 +120,7 @@ describe("Card component", () => {
     expect(screen.getByRole("link", { name: "Cart (1)" })).toBeInTheDocument();
   });
 
-  it("displays a loading message while the network request is ongoing", async () => {
+  it("displays a loading message while the network request is waiting to be resolved or rejected", async () => {
     mockFetch.mockResolvedValueOnce({
       ok: false,
       status: 404,
