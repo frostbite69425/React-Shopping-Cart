@@ -1,3 +1,23 @@
 .navbar {
-  background-color: red;
+  padding: 2rem;
+  background-color: var(--bg-light);
+  display: grid;
+
+  > div {
+    place-self: end;
+    display: flex;
+    gap: 3rem;
+
+    > a {
+      color: var(--primary);
+      background-color: var(--bg);
+      padding: 0.3rem 2rem;
+      border-radius: 5px;
+    }
+
+    > a:hover {
+      background: var(--gradient-hover);
+      text-decoration: none;
+    }
+  }
 }

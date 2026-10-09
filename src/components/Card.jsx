@@ -45,9 +45,10 @@ const Card = ({ item, cartItems, setCartItems, parent = "shop" }) => {
   if (parent === "shop") {
     return (
       <div>
-        <h3>{item.title}</h3>
         <img src={item.image} alt={item.title} />
+        <h3>{item.title}</h3>
         <p>{item.description}</p>
+
         <p>
           <b>Price: </b>${item.price}
         </p>
@@ -75,7 +76,11 @@ const Card = ({ item, cartItems, setCartItems, parent = "shop" }) => {
             +
           </button>
         </div>
-        <button type="button" onClick={handleCartClick}>
+        <button
+          className="tangerine-bold"
+          type="button"
+          onClick={handleCartClick}
+        >
           Add to Cart
         </button>
       </div>

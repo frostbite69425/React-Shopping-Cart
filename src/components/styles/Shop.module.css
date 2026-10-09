@@ -1,0 +1,100 @@
+.container {
+  padding: 2rem;
+  > h1 {
+    color: var(--text);
+    font-size: clamp(5rem, 3dvw, 8rem);
+  }
+}
+
+.cardHolder {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 4rem;
+
+  white-space: wrap;
+
+  > div {
+    display: grid;
+    grid-template-rows: 1fr 0.5fr 20rem 5rem 5rem min-content min-content;
+    background: var(--gradient);
+    border: var(--border-card);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    padding: 2rem;
+    gap: 2rem;
+
+    p {
+      overflow-wrap: anywhere;
+      overflow-y: auto;
+    }
+
+    div {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+
+      button {
+        border-radius: 15px;
+        padding: 0.5rem 1.5rem;
+        text-align: center;
+        background-color: var(--primary);
+        color: white;
+        font-size: 2.4rem;
+        border: var(--border-card);
+        box-shadow: var(--shadow);
+      }
+
+      button:disabled {
+        background-color: var(--disabled);
+      }
+
+      input {
+        flex: 1;
+        max-width: 20rem;
+        border-radius: 5px;
+        border: var(--border-card);
+        box-shadow: var(--shadow);
+        text-align: center;
+        background-color: var(--bg-dark);
+      }
+    }
+
+    div + button {
+      max-width: 30rem;
+      place-self: center;
+      padding: 0.5rem 2rem;
+      border-radius: 5px;
+      background-color: var(--bg-dark);
+      border: var(--border-card);
+      box-shadow: var(--shadow);
+      font-size: 3rem;
+      color: var(--text);
+    }
+  }
+
+  h3 {
+    color: var(--text);
+    font-size: clamp(2.5rem, 3dvw, 3rem);
+  }
+
+  img {
+    border-radius: 15px;
+    max-width: 100%;
+    max-height: 20rem;
+    place-self: center;
+    object-fit: fill;
+  }
+}
+
+@media (width < 700px) {
+  div.cardHolder {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  div.cardHolder div {
+    grid-template-rows: 1fr 0.5fr min-content 5rem 5rem min-content min-content;
+    div + button {
+      font-size: 2.5rem;
+    }
+  }
+}

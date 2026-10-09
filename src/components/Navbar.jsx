@@ -15,27 +15,29 @@ const Navbar = ({ excludedPath, cartItems }) => {
 
   return (
     <nav className={styles.navbar}>
-      {paths.map((path) => {
-        if (path === "/") {
-          return (
-            <Link key={path} to={path} onClick={() => updatePath(path)}>
-              Home
-            </Link>
-          );
-        } else if (path === "cart") {
-          return (
-            <Link key={path} to={path} onClick={() => updatePath(path)}>
-              {cartItems.length > 0 ? `Cart (${cartItems.length})` : "Cart"}
-            </Link>
-          );
-        } else {
-          return (
-            <Link key={path} to={path} onClick={() => updatePath(path)}>
-              Shop
-            </Link>
-          );
-        }
-      })}
+      <div>
+        {paths.map((path) => {
+          if (path === "/") {
+            return (
+              <Link key={path} to={path} onClick={() => updatePath(path)}>
+                Home
+              </Link>
+            );
+          } else if (path === "cart") {
+            return (
+              <Link key={path} to={path} onClick={() => updatePath(path)}>
+                {cartItems.length > 0 ? `Cart (${cartItems.length})` : "Cart"}
+              </Link>
+            );
+          } else {
+            return (
+              <Link key={path} to={path} onClick={() => updatePath(path)}>
+                Shop
+              </Link>
+            );
+          }
+        })}
+      </div>
     </nav>
   );
 };
