@@ -98,3 +98,9 @@
     }
   }
 }
+
+.error {
+  text-align: center;
+  padding: 2rem;
+  font-size: 2rem;
+}

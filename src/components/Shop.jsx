@@ -2,14 +2,18 @@ import { useOutletContext } from "react-router";
 import Card from "./Card";
 import useImageUrl from "../hooks/useImageUrl";
 import styles from "./styles/Shop.module.css";
+import Loader from "./Loader";
 
 const Shop = () => {
-  let { shopItems, error, loading } = useImageUrl();
+  const { shopItems, error, loading } = useImageUrl();
 
   const [cartItems, setCartItems] = useOutletContext([]);
 
-  if (loading) return <p>Loading ...</p>;
-  if (error) return <p>A network error was encountered</p>;
+  if (loading) return <Loader />;
+  if (error)
+    return (
+      <p className={styles.error}>Oops! We encountered a network error!</p>
+    );
 
   return (
     <>

@@ -6,7 +6,7 @@ const Cart = () => {
 
   return (
     <>
-      <h2>Your Cart</h2>
+      <h2 className="tangerine-bold">Your Cart</h2>
 
       {cartItems.length > 0 ? (
         cartItems.map((cartItem) => {
