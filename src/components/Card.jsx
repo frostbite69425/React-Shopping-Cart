@@ -34,6 +34,7 @@ const Card = ({ item, cartItems, setCartItems, parent = "shop" }) => {
           }
         }),
       );
+      setItemQuantity(0);
     } else {
       if (itemQuantity > 0) {
         setCartItems([...cartItems, { ...item, quantity: itemQuantity }]);
