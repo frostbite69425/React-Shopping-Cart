@@ -79,3 +79,10 @@
 .backgroundImageThree:hover {
   transform: translate(50rem, -13rem) scale(1.06) rotate3d(1, 1, 10, -15deg);
 }
+
+@media (width < 1500px) {
+  div.backgroundImageTwo,
+  div.backgroundImageThree {
+    display: none;
+  }
+}
