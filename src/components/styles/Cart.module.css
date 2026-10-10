@@ -56,6 +56,11 @@
       }
     }
 
+    hr {
+      border: 0;
+      border-top: 2px solid var(--bg-dark);
+    }
+
     hr:last-child {
       display: none;
     }
@@ -66,6 +71,7 @@
   }
 
   .paragraph {
+    padding: 0rem 2rem;
     place-self: center;
   }
 }
