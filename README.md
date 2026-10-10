@@ -1,16 +1,19 @@
-# React + Vite
+## ABOUT THE PROJECT
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- This is a project that integrates API usage (https://fakestoreapi.com/) with react routing to make a SPA with 3 pages.
 
-Currently, two official plugins are available:
+## CONCEPTS USED
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React Routing
+- CSS Modules
+- State management inside React
+- Async API handling inside React components
+- Testing UI components
 
-## React Compiler
+## ASSET LINKS
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Photo by <a href="https://unsplash.com/@zfjr?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Zuriel Forcades Zf.j.r</a> on <a href="https://unsplash.com/photos/collection-of-items-including-shoes-hats-keys-and-phone-XP4W2iLNsMU?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
-## Expanding the ESLint configuration
+- Photo by <a href="https://unsplash.com/@madebyvadim?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Vadim Sherbakov</a> on <a href="https://unsplash.com/photos/black-corded-headphones-near-eyeglasses-tCICLJ5ktBE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Photo by <a href="https://unsplash.com/@mobinaghzz?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Mobina Ghazazani</a> on <a href="https://unsplash.com/photos/a-black-leather-bag-on-a-yellow-background-lnbuoKz2GlM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
