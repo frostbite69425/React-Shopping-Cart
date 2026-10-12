@@ -1,6 +1,7 @@
 import { useOutletContext } from "react-router";
 import Card from "./Card";
 import styles from "./styles/Cart.module.css";
+import { Fragment } from "react";
 
 const Cart = () => {
   const [cartItems, setCartItems] = useOutletContext();
@@ -18,7 +19,7 @@ const Cart = () => {
         <div>
           {cartItems.map((cartItem) => {
             return (
-              <>
+              <Fragment key={cartItem.id}>
                 <Card
                   key={cartItem.id}
                   item={cartItem}
@@ -27,7 +28,7 @@ const Cart = () => {
                   setCartItems={setCartItems}
                 />
                 <hr />
-              </>
+              </Fragment>
             );
           })}
           <p>

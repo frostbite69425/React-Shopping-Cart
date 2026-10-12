@@ -66,6 +66,49 @@ describe("Card component", () => {
     expect(screen.getByRole("button", { name: "+" })).toBeEnabled();
   });
 
+  it("cart items gets deleted when the delete item button is clicked", async () => {
+    const mockItems = [
+      {
+        id: 1,
+        title: "foo",
+        image: "mockImageLink",
+        description: "bar",
+        price: "baz",
+        rating: { rate: 1.2, count: 200 },
+        quantity: 20,
+      },
+      {
+        id: 1,
+        title: "bar",
+        image: "mockImageLink",
+        description: "bar",
+        price: "baz",
+        rating: { rate: 1.2, count: 200 },
+        quantity: 10,
+      },
+    ];
+
+    const cart = render(
+      <Card
+        item={mockItems[0]}
+        cartItems={mockItems}
+        setCartItems={setCartItems}
+        parent="cart"
+      />,
+    );
+
+    const deleteItemBtn = cart.getAllByRole("button", {
+      name: "Delete Item",
+    });
+
+    expect(deleteItemBtn[0]).toBeInTheDocument();
+
+    const user = userEvent.setup();
+
+    await user.click(deleteItemBtn[0]);
+    expect(cart.getAllByRole("button", { name: "Delete Item" }).length).toBe(1);
+  });
+
   it("cart item quantity increases when add to cart button is clicked", async () => {
     const mockItems = [
       {
@@ -139,10 +182,12 @@ describe("Card component", () => {
         ],
       },
     ];
+
     const router = createMemoryRouter(customRoute);
+
     render(<RouterProvider router={router} />);
 
-    await expect(screen.queryByText("Loading ...")).toBeInTheDocument();
+    expect(screen.getByTestId("svg-loader")).toBeInTheDocument();
   });
 
   it("displays an error message when the network request fails", async () => {
@@ -172,7 +217,7 @@ describe("Card component", () => {
     });
 
     expect(
-      screen.queryByText("A network error was encountered"),
+      screen.queryByText("Oops! We encountered a network error!"),
     ).toBeInTheDocument();
   });
 });

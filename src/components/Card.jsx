@@ -5,7 +5,7 @@ const Card = ({ item, cartItems, setCartItems, parent = "shop" }) => {
 
   function handleChange(e) {
     e.preventDefault();
-    setItemQuantity(e.target.value);
+    setItemQuantity(Number(e.target.value));
   }
 
   function handleIncrementDecrement(e, type) {
@@ -34,11 +34,9 @@ const Card = ({ item, cartItems, setCartItems, parent = "shop" }) => {
           }
         }),
       );
-      setItemQuantity(0);
     } else {
       if (itemQuantity > 0) {
         setCartItems([...cartItems, { ...item, quantity: itemQuantity }]);
-        setItemQuantity(0);
       }
     }
   }
@@ -87,6 +85,11 @@ const Card = ({ item, cartItems, setCartItems, parent = "shop" }) => {
       </div>
     );
   } else {
+    function handleDelete(e) {
+      e.preventDefault();
+      setCartItems(cartItems.filter((cartItem) => cartItem.id !== item.id));
+    }
+
     function handleQuantityAdjustment(e, type) {
       e.preventDefault();
       if (type === "-") {
@@ -124,6 +127,9 @@ const Card = ({ item, cartItems, setCartItems, parent = "shop" }) => {
           <b>Price: </b>${item.price}
         </p>{" "}
         <div className="quantityAdjuster">
+          <button type="button" onClick={(e) => handleDelete(e)}>
+            Delete Item
+          </button>
           <button
             type="button"
             onClick={(e) => handleQuantityAdjustment(e, "-")}

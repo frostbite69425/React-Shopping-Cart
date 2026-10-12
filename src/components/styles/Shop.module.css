@@ -48,6 +48,15 @@
         background-color: var(--disabled);
       }
 
+      button:hover:not(:disabled) {
+        background-color: var(--primary-hover);
+      }
+
+      button:active:not(:disabled) {
+        background-color: var(--bg-dark);
+        color: var(--text);
+      }
+
       input {
         flex: 1;
         max-width: 20rem;
@@ -69,6 +78,14 @@
       box-shadow: var(--shadow);
       font-size: 3rem;
       color: var(--text);
+    }
+
+    div + button:hover {
+      background-color: var(--bg-light);
+    }
+
+    div + button:active {
+      background: var(--gradient);
     }
   }
 

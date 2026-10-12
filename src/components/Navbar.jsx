@@ -26,7 +26,9 @@ const Navbar = ({ excludedPath, cartItems }) => {
           } else if (path === "cart") {
             return (
               <Link key={path} to={path} onClick={() => updatePath(path)}>
-                {cartItems.length > 0 ? `Cart (${cartItems.length})` : "Cart"}
+                {cartItems.length > 0
+                  ? `Cart (${Number(cartItems.reduce((acc, curr) => acc + curr.quantity, 0))})`
+                  : "Cart"}
               </Link>
             );
           } else {

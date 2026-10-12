@@ -85,6 +85,7 @@ h6 {
   --border: oklch(0.6 0.07 81);
   --border-muted: oklch(0.7 0.07 81);
   --primary: oklch(73.234% 0.09611 33.172);
+  --primary-hover: oklch(80.687% 0.09349 33.051);
   --secondary: oklch(0.4 0.1 261);
   --danger: oklch(0.5 0.07 30);
   --warning: oklch(0.5 0.07 100);

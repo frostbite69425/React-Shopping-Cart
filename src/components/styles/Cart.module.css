@@ -52,6 +52,15 @@
           background: var(--bg-dark);
           border: var(--border-card);
           box-shadow: var(--shadow);
+          color: var(--text-muted);
+        }
+
+        button:hover {
+          background-color: var(--bg);
+        }
+
+        button:active {
+          background-color: var(--bg-light);
         }
       }
     }

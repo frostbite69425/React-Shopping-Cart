@@ -1,0 +1,16 @@
+.container {
+  display: grid;
+  place-items: center;
+  gap: 2rem;
+  margin-top: 20rem;
+  h1 {
+    font-size: clamp(2.3rem, 10dvw, 5rem);
+  }
+  h2 {
+    font-size: clamp(1.5rem, 5dvw, 2.6rem);
+  }
+  a {
+    color: var(--secondary);
+    word-break: break-all;
+  }
+}

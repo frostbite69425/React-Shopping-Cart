@@ -3,6 +3,7 @@
   background-color: var(--bg-light);
   display: grid;
   position: sticky;
+  z-index: 1;
   top: 0px;
   > div {
     place-self: end;
