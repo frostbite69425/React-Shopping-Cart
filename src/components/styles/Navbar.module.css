@@ -1,12 +1,13 @@
 .navbar {
-  padding: 2rem;
+  padding: 1rem 2rem;
   background-color: var(--bg-light);
-  display: grid;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   position: sticky;
   z-index: 1;
   top: 0px;
   > div {
-    place-self: end;
     display: flex;
     gap: 3rem;
 

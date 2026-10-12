@@ -15,6 +15,7 @@ const Navbar = ({ excludedPath, cartItems }) => {
 
   return (
     <nav className={styles.navbar}>
+      <h1 className="tangerine-bold">Trnkts</h1>
       <div>
         {paths.map((path) => {
           if (path === "/") {
